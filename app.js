@@ -22,8 +22,8 @@ app.use(function(req, res, next) {
   res.status(404).send("No Route Found")
 });
 
-app.listen(process.env.PORT || 4000, () => {
-  console.log("Server running on port 4000")
+var listener = app.listen(process.env.PORT, () => {
+  console.log("Server running on port", listener.address().port)
 })
 
 module.exports = app;
